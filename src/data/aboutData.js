@@ -1,6 +1,6 @@
 export const aboutData = {
     title: "Who I am",
     description1: "Hello! My name is Shikher Mishra. I'm an aspiring web developer based in India.",
-    description2: "I am a student at Masai School, currently learning Fullstack Web-Development. A project that I worked on towards the end of my Master’s in History set me on this path of a web developer. The project involved looking at movies on historical themes that could be considered as an educational tool. The website was not the focus of the project, but working on it was such a thrilling experience that a career in this felt like a right fit. Other than this I am a bibliophile, who not just loves reading books but also buying and maintaining a personal library.",
+    description2: "I am a front-end developer with 2 years of experience in ReactJS, NodeJS technologies. I have been working in Frontend and Backend Development throughout my experience. I have strong experience in ReactJS,NodejS,HTML,CSS,Javascript. I also have experience of developing redux architecture, design and development, rest API’s integration of third party and user stories grooming. I have strong experience in various Frontend Libraries , AWS/Azure services (Queuing service,SNS,SES etc), storybook and aware of agile scrum methodology for effective release planning. I have experience writing unit test case using enzyme and configuring Jenkins jobs with the Github repository",
     image: 2
 }
