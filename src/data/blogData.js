@@ -1,27 +1,31 @@
+import blog1 from '../assets/png/blog1.png';
+import blog2 from '../assets/png/blog2.png';
+import blog3 from '../assets/png/blog3.png';
+
 export const blogData = [
     {
         id: 1,
-        title: 'Cloning Sportsjam.in',
-        description: 'My expeirence working on my first big project within the Masai Curriculum',
-        date: 'Dec 19, 2021',
-        image: 'https://miro.medium.com/max/875/1*R__cdn8L1gYGK1Tdqqyubg.png',
-        url: 'https://medium.com/@sreerag.rajan5/cloning-sportsjam-in-cd1c80c1b06b'
+        title: 'React Native For Web: Merging the worlds of mobile and web',
+        description: 'A Brief about * React Native For Web * ',
+        date: 'Noc 10, 2020',
+        image: blog1,
+        url: 'https://sirshikher.medium.com/react-native-for-web-merging-the-worlds-of-mobile-and-web-d214123070dd'
     },
     {
         id: 2,
-        title: 'CLONING RELIANCE DIGITAL',
-        description: 'Experience of the second project.',
-        date: 'Jan 23, 2022',
-        image: 'https://miro.medium.com/max/875/1*nY9cUfzwtDaM6lGyvj4STg.png',
-        url: 'https://medium.com/@sreerag.rajan5/cloning-reliance-digital-439cd56d46a3'
+        title: 'Deploying Website with Gatsby',
+        description: 'Deploying Website with Gatsby (using ReactJS 🙀),Contentful 🙌 and Netlify in 8 Simple Steps',
+        date: 'Sep 17, 2019',
+        image: blog2,
+        url: 'https://sirshikher.medium.com/deploying-website-with-gatsby-using-reactjs-contentful-and-netlify-in-8-simple-f16605116b9e'
     },
     {
         id: 3,
-        title: 'Reliance Digital Clone (Part II)',
-        description: 'The experience of the third project, with a focus on leadership skills',
-        date: 'Feb 27, 2022',
-        image: 'https://miro.medium.com/max/875/1*qRNfRbuHCDC1ct0chLZoWA.png',
-        url: 'https://medium.com/@sreerag.rajan5/reliance-digital-clone-part-ii-57797eaf1ddf'
+        title: 'Creating MicroFrontend paradigms',
+        description: 'Creating MicroFrontend paradigms using Bit Tool 🎩 PS:Why only backend have all the fun of MicroServices',
+        date: 'Dec 22, 2019',
+        image: blog3,
+        url: 'https://sirshikher.medium.com/creating-microfrontend-application-using-bit-tool-why-only-backend-have-all-the-fun-of-16b7e591b7d8'
     },
     
 ]
