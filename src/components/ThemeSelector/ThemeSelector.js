@@ -56,7 +56,7 @@ const ThemeSelector = () => {
 
   return (
     <>
-      <Box class="theme_container" sx={{ minWidth: 120, width: 200 }}>
+      <Box class="theme_container" sx={{ minWidth: 200, width: 200 }}>
         <FormControl fullWidth>
           <InputLabel
             style={{ color: theme.primary }}
