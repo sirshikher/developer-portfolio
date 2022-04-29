@@ -1,12 +1,14 @@
 import React, { useContext} from 'react';
+import { connect } from 'react-redux';
 
 import './Achievement.css';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { achievementData } from '../../data/achievementData'
 import AchievementCard from './AchievementCard';
 
-function Achievement() {
-
+const Achievement = (props) => {
+    const {achivement} = props;
+const {bio,achievements} = achivement;
     const { theme } = useContext(ThemeContext);
     return (
         <>
@@ -14,10 +16,10 @@ function Achievement() {
                 <div className="achievement" id="achievement" style={{backgroundColor: theme.secondary}}>
                 <div className="achievement-body">
                     <h1 style={{color: theme.primary}}>Achievements</h1>
-                    <h4 style={{color:theme.tertiary}}>{achievementData.bio}</h4>
+                    <h4 style={{color:theme.tertiary}}>{bio}</h4>
                 </div>
                 <div className="achievement-cards">
-                    {achievementData.achievements.map(achieve => ( 
+                    {achievements.map(achieve => ( 
                         <AchievementCard 
                         key={achieve.id}
                         id={achieve.id}
@@ -33,5 +35,10 @@ function Achievement() {
         </>
     )
 }
+const mapStateToProps = (state) => {
+    return {
+        achivement: state.achivement
+    }
+}
+export default connect(mapStateToProps)(Achievement);
 
-export default Achievement

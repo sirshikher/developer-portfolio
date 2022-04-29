@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import {connect} from 'react-redux';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 
@@ -7,7 +8,10 @@ import EducationCard from './EducationCard';
 
 import { educationData } from '../../data/educationData'
 
-function Education() {
+const Education = (props) => {
+
+    const {education} = props;
+   const  {id,startyear,endyear,course,institution} = education;
 
     const { theme } = useContext(ThemeContext);
     return (
@@ -18,12 +22,12 @@ function Education() {
                 <h1 style={{color:theme.primary}}>Education</h1>
                     {educationData.map(edu => (
                         <EducationCard 
-                            key={edu.id}
-                            id={edu.id}
-                            institution={edu.institution}
-                            course={edu.course}
-                            startYear={edu.startYear}
-                            endYear={edu.endYear}
+                            key={id}
+                            id={id}
+                            institution={institution}
+                            course={course}
+                            startYear={startyear}
+                            endYear={endyear}
                         />
                     ))}
                 </div>
@@ -34,5 +38,10 @@ function Education() {
         </div>
     )
 }
-
-export default Education
+const mapStateToProps = (state) => {
+    const {education} = state;
+    return {
+        education
+    }
+}
+export default connect(mapStateToProps)(Education);

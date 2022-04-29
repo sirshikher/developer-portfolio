@@ -1,14 +1,16 @@
 import React,{useContext} from 'react';
+import { connect } from 'react-redux';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 
 import './Experience.css';
 
-import { experienceData } from '../../data/experienceData'
+
 import ExperienceCard from './ExperienceCard';
 
-function Experience() {
+const Experience = (props) => {
 
+    const {experience} = props;
     const { theme } = useContext(ThemeContext);
     return (
         <div className="experience" id="experience" style={{backgroundColor: theme.secondary}}> 
@@ -18,7 +20,7 @@ function Experience() {
                  </div>
                  <div className="experience-description">
                     <h1 style={{color:theme.primary}}>Experience</h1>
-                    {experienceData.map(exp =>(
+                    {experience.map(exp =>(
                         <ExperienceCard 
                             key={exp.id}
                             id={exp.id}
@@ -32,5 +34,9 @@ function Experience() {
         </div>
     )
 }
-
-export default Experience
+const mapStateToProps = (state) => {
+    return {
+        experience: state.experience
+    }
+}
+export default connect(mapStateToProps)(Experience);

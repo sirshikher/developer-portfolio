@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 import { Button } from '@material-ui/core';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import { makeStyles } from '@material-ui/core/styles';
+import {connect} from 'react-redux';
 
 import './Landing.css';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import { headerData } from '../../data/headerData';
 import { socialsData } from '../../data/socialsData';
 
 import {
@@ -16,9 +16,9 @@ import {
     FaBlogger,
 } from 'react-icons/fa';
 
-function Landing() {
+const Landing = (props) => {
     const { theme, drawerOpen } = useContext(ThemeContext);
-
+    const {landing} = props;
     const useStyles = makeStyles((t) => ({
         resumeBtn: {
             color: theme.primary,
@@ -143,7 +143,7 @@ function Landing() {
                     </div>
                 </div>
                 <img
-                    src={headerData.image}
+                    src={landing.image}
                     alt=''
                     className='landing--img'
                     style={{
@@ -159,14 +159,14 @@ function Landing() {
                         className='lcr--content'
                         style={{ color: theme.tertiary }}
                     >
-                        <h6>{headerData.title}</h6>
-                        <h1>{headerData.name}</h1>
-                        <p>{headerData.desciption}</p>
+                        <h6>{landing.title}</h6>
+                        <h1>{landing.name}</h1>
+                        <p>{landing.desciption}</p>
 
                         <div className='lcr-buttonContainer'>
-                            {headerData.resumePdf && (
+                            {landing.resumePdf && (
                                 <a
-                                    href={headerData.resumePdf}
+                                    href={landing.resumePdf}
                                     download='resume'
                                     target='_blank'
                                     rel='noreferrer'
@@ -193,5 +193,9 @@ function Landing() {
         </div>
     );
 }
-
-export default Landing;
+const mapStateToProps = (state) => {
+    return {
+        landing: state.landing
+    }
+}
+export default connect(mapStateToProps)(Landing);

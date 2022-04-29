@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
+import { connect } from 'react-redux';
 
 import './About.css';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import { aboutData } from '../../data/aboutData'
 
 
 
-function About() {
-
+const About = (props) => {
     const { theme } = useContext(ThemeContext);
+    const {about} = props;
+    const {title, description1,description2,image} = about;
     return (
         <div className="about" id="about" style={{backgroundColor: theme.secondary}}>
             <div className="line-styling">
@@ -18,12 +19,12 @@ function About() {
             </div>
             <div className="about-body">
                 <div className="about-description">
-                    <h2 style={{color: theme.primary}}>{aboutData.title}</h2>
-                    <p style={{color:theme.tertiary80}}>{aboutData.description1}<br/><br/>{aboutData.description2}</p>
+                    <h2 style={{color: theme.primary}}>{title}</h2>
+                    <p style={{color:theme.tertiary80}}>{description1}<br/><br/>{description2}</p>
                 </div>
                 <div className="about-img">
                     <img 
-                        src={aboutData.image === 2 ? theme.aboutimg1 : theme.aboutimg2}  
+                        src={image === 2 ? theme.aboutimg1 : theme.aboutimg2}  
                         alt="" 
                     />
                 </div>
@@ -33,4 +34,10 @@ function About() {
     )
 }
 
-export default About
+const mapStateToProps = (state) => {
+    return {
+    about: state.about
+    }
+}
+
+export default connect(mapStateToProps)(About);

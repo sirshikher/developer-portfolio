@@ -2,15 +2,15 @@ import React,{ useContext} from 'react';
 import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import { HiArrowRight } from "react-icons/hi";
+import { connect } from 'react-redux';
 
 import './Blog.css';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import { blogData } from '../../data/blogData'
 import SingleBlog from './SingleBlog/SingleBlog';
 
 
-function Blog() {
-
+const Blog = (props) => {
+const {blog} = props;
     const { theme } = useContext(ThemeContext);
 
     const useStyles = makeStyles(() => ({
@@ -42,14 +42,14 @@ function Blog() {
 
     return (
         <>
-            {blogData.length > 0 && (
+            {blog.length > 0 && (
                 <div className="blog" id="blog" style={{backgroundColor: theme.secondary}}>
                     <div className="blog--header">
                         <h1 style={{color: theme.primary}}>Blog</h1>
                     </div>
                     <div className="blog--body">
                         <div className="blog--bodyContainer">
-                            {blogData.slice(0, 3).reverse().map(blog => (
+                            {blog.slice(0, 3).reverse().map(blog => (
                                 <SingleBlog 
                                     theme={theme}
                                     title={blog.title}
@@ -63,7 +63,7 @@ function Blog() {
                             ))}
                         </div> 
 
-                        {blogData.length > 3 && (
+                        {blog.length > 3 && (
                             <div className="blog--viewAll">
                                 <Link to="/blog">
                                     <button className={classes.viewAllBtn}>
@@ -80,5 +80,9 @@ function Blog() {
         </>
     )
 }
-
-export default Blog
+const mapStateToProps = (state) => {
+    return {
+        blog: state.blog
+    }
+}
+export default connect(mapStateToProps)(Blog);

@@ -5,6 +5,7 @@ import illustrator from '../assets/svg/skills/illustrator.svg'
 import docker from '../assets/svg/skills/docker.svg'
 import adobeXd from '../assets/svg/skills/adobe-xd.svg'
 import afterEffects from '../assets/svg/skills/after-effects.svg'
+import css3 from '../assets/svg/skills/CSS3.svg'
 import css from '../assets/svg/skills/css.svg'
 import angular from '../assets/svg/skills/angular.svg'
 import javascript from '../assets/svg/skills/javascript.svg'
@@ -72,6 +73,15 @@ import picsart from '../assets/svg/skills/picsart.svg'
 import sketch from '../assets/svg/skills/sketch.svg'
 import unity from '../assets/svg/skills/unity.svg'
 import wolframalpha from '../assets/svg/skills/wolframalpha.svg'
+import redux from '../assets/svg/skills/redux.svg'
+import ubuntu from '../assets/svg/skills/ubuntu.svg'
+import freemarker from '../assets/svg/skills/freemarker.svg'
+import nodejs from '../assets/svg/skills/nodejs.svg'
+import ant from '../assets/svg/skills/ant.svg'
+import html5 from '../assets/svg/skills/html5.svg'
+import keycloak from '../assets/svg/skills/keycloak.svg'
+import jira from '../assets/svg/skills/jira.svg'
+import postman from '../assets/svg/skills/postman.svg'
 
 import canva from '../assets/svg/skills/canva.svg'
 
@@ -163,6 +173,8 @@ export const skillsImage = (skill) => {
             return adobeaudition;
         case 'aws':
             return aws;
+        case 'few services of aws':
+            return aws;    
         case 'deno':
             return deno;
         case 'django':
@@ -227,6 +239,26 @@ export const skillsImage = (skill) => {
             return wolframalpha;
         case 'canva':
             return canva;
+        case 'css3':
+            return css3;  
+        case 'redux':
+            return redux;  
+        case 'ubuntu':
+            return ubuntu;   
+        case 'freemarker':
+            return freemarker;   
+        case 'nodejs':
+            return nodejs;
+        case 'antdesigns':
+            return ant;           
+        case 'keycloak':
+            return keycloak; 
+        case 'html5':
+            return html5;  
+        case 'postman':
+            return postman;  
+       case 'jira':
+            return jira;        
         default:
             break;
     }

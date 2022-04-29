@@ -9,6 +9,7 @@ import { FaUser, FaFolderOpen } from 'react-icons/fa';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CloseIcon from '@material-ui/icons/Close';
+import { ThemeSelector} from '../../components'
 
 import './Navbar.css';
 import { headerData } from '../../data/headerData';
@@ -139,7 +140,7 @@ function Navbar() {
                 <h1 style={{ color: theme.secondary }}>
                     {shortname(headerData.name)}
                 </h1>
-
+                <ThemeSelector />
                 <IoMenuSharp
                     className={classes.navMenu}
                     onClick={handleDrawerOpen}
